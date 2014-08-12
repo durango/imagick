@@ -5,14 +5,15 @@
 package imagick
 
 /*
+#define MAGICKCORE_SIZEOF_DOUBLE_T 12
 #include <wand/MagickWand.h>
 */
 import "C"
 
 type DrawInfo struct {
-	di *C.DrawInfo
+  di *C.DrawInfo
 }
 
 func NewDrawInfo() *DrawInfo {
-	return &DrawInfo{C.AcquireDrawInfo()}
+  return &DrawInfo{C.AcquireDrawInfo()}
 }
